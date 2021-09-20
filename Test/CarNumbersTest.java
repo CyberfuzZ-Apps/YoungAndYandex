@@ -18,7 +18,7 @@ public class CarNumbersTest {
         System.setOut(new PrintStream(output));
     }
 
-    @Ignore
+    //@Ignore
     @Test
     public void test1() {
         CarNumbers carNumbers = new CarNumbers();
@@ -35,7 +35,7 @@ public class CarNumbersTest {
         assertEquals("B137AC\n", output.toString());
     }
 
-    @Ignore
+    //@Ignore
     @Test
     public void test2() {
         CarNumbers carNumbers = new CarNumbers();
@@ -53,7 +53,6 @@ public class CarNumbersTest {
                 + "C143AB\n", output.toString());
     }
 
-    @Ignore
     @Test
     public void test3() {
         CarNumbers carNumbers = new CarNumbers();
@@ -89,6 +88,7 @@ public class CarNumbersTest {
                 + "AAAAAAAAAAAAAAAAAAAA\n", output.toString());
     }
 
+    //@Ignore
     @Test
     public void test4() {
         CarNumbers carNumbers = new CarNumbers();

@@ -20,15 +20,15 @@ public class CarNumbers {
             for (int j = 0; j < lists.size(); j++) {
                 int count = 0;
                 String[] tmp = lists.get(j);
+                String key = nums.get(i);
                 for (int k = 0; k < tmp.length; k++) {
-                    if (nums.get(i).contains(tmp[k])) {
+                    if (key.contains(tmp[k])) {
                         count++;
                     }
                 }
-                if (count != 0 && (count == tmp.length || count == nums.get(i).length())) {
-                    if (rsl.putIfAbsent(nums.get(i), count) != null) {
-                        String s = nums.get(i) + "#";
-                        rsl.put(s, count);
+                if (count >= tmp.length || count >= key.length()) {
+                    if (rsl.putIfAbsent(key, count) != null) {
+                        rsl.replace(key, count + count);
                     }
                 }
             }
@@ -41,10 +41,6 @@ public class CarNumbers {
         }
         for (String s : rsl.keySet()) {
             if (rsl.get(s) == max) {
-                int index = s.indexOf("#");
-                if (index != -1) {
-                    s = s.substring(0, index);
-                }
                 System.out.println(s);
             }
         }
